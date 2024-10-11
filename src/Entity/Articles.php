@@ -26,7 +26,7 @@ class Articles
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $creator = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -69,14 +69,14 @@ class Articles
         return $this;
     }
 
-    public function getCreator(): ?User
+    public function getUser(): ?User
     {
-        return $this->creator;
+        return $this->user;
     }
 
-    public function setCreator(?User $creator): static
+    public function setUser(?User $user): static
     {
-        $this->creator = $creator;
+        $this->user = $user;
 
         return $this;
     }

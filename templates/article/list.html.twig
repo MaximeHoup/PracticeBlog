@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<a href="{{ path('article_create') }}" class="btn btn-success pull-right">Créer une tâche</a>
+	<div class="row">
+		{% for article in articles %}
+			<div class="col-sm-4 col-lg-4 col-md-4">
+				<div class="card" style="width: 18rem;">
+					<div class="card_body">{{ article.title }}</div>
+					<a href="{{ path('article_show', {'id': article.id})}}" class="btn btn-primary">Lire</a>
+					<a href="{{ path('article_edit', {'id': article.id})}}" class="btn btn-warning">Modifier</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
