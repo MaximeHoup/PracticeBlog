@@ -136,7 +136,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->articles->contains($article)) {
             $this->articles->add($article);
-            $article->setCreator($this);
+            $article->setUser($this);
         }
 
         return $this;
@@ -146,8 +146,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->articles->removeElement($article)) {
             // set the owning side to null (unless already changed)
-            if ($article->getCreator() === $this) {
-                $article->setCreator(null);
+            if ($article->getUser() === $this) {
+                $article->setUser(null);
             }
         }
 
