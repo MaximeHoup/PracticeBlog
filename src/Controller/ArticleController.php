@@ -44,7 +44,7 @@ class ArticleController extends AbstractController
             }
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_home ');
+            return $this->redirectToRoute('app_home');
         }
 
         return $this->render('article/create.html.twig', [
